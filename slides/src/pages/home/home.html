@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Refresh
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  
+  <ion-list>
+    <ion-item-sliding #item>
+      <ion-item>
+       Queen
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button (click)="favorite(item)">Delete</button>
+        <button ion-button color="danger" (click)="share(item)">Edit</button>
+      </ion-item-options>
+  
+      <ion-item-options side="left">
+        <button ion-button (click)="unread(item)">Unread</button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
+
+  <ion-slides>
+      
+    <ion-slide class="slide1">
+      <h1>Slide 1</h1>
+      <img src="../../assets/imgs/slides300.png">
+    </ion-slide>
+    <ion-slide class="slide2">
+      <h1>Slide 2</h1>
+      <img src="../../assets/imgs/loot.jpg">
+    </ion-slide>
+    <ion-slide class="slide3">
+      <h1>Slide 3</h1>
+      <img src="../../assets/imgs/love.jpg">
+    </ion-slide>
+  </ion-slides>
+
+</ion-content>
